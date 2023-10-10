@@ -31,6 +31,7 @@ public class Ejercicio3 {
 		System.out.print("Euros: ");
 		Scanner in = new Scanner(System.in);
 		float euros = in.nextFloat();
+		in.close();
 		float dolares = euros * 1.06f;
 		System.out.printf("%.2f euros = %.2f dolares", euros, dolares);
 	}
