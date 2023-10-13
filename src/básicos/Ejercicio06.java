@@ -10,7 +10,7 @@ import java.io.InputStreamReader;
  * 
  */
 
-public class Ejercicio6 {
+public class Ejercicio06 {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		double radio;

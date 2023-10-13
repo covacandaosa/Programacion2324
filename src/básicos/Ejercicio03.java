@@ -10,7 +10,7 @@ import java.util.Scanner;
  * 
  */
 
-public class Ejercicio3 {
+public class Ejercicio03 {
 
 //	public static void main(String[] args) throws NumberFormatException, IOException {
 //		System.out.print("Euros: ");

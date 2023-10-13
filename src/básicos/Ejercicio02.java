@@ -8,7 +8,7 @@ package básicos;
  * 
  */
 
-public class Ejercicio2 {
+public class Ejercicio02 {
 	
 	public static void main(String[] args) {
 		System.out.printf("1234 / 532 = %-15.2f\n", 1234f / 532f);
