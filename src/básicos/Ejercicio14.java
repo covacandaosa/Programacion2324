@@ -24,14 +24,15 @@ import java.io.InputStreamReader;
 public class Ejercicio14 {
 
 	public static void main(String[] args) throws IOException {
-		String letras = "TRWAGMYFPDXBNJZSQVHLCKE";
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		System.out.print("DNI: ");
-		String dni = in.readLine();
+		System.out.println(validarDNI(in.readLine()) ? "correcto" : "incorrecto");
+	}
+	
+	static boolean validarDNI(String dni) {
 		int numDNI = Integer.parseInt(dni.substring(0, dni.length() - 1));
 		char letraDNI = dni.toUpperCase().charAt(dni.length() - 1);
-		char letra = letras.charAt(numDNI % 23);
-		System.out.println(letraDNI == letra ? "correcto" : "incorrecto");
+		return letraDNI == "TRWAGMYFPDXBNJZSQVHLCKE".charAt(numDNI % 23);
 	}
 
 }
