@@ -23,13 +23,15 @@ import java.util.regex.Pattern;
  *  varios nombres separados por comas y el programa la leerá,
  *  buscará los nombres y los mostrará de nuevo, cada uno en una línea. 
  * 
+ *  Pepe Pérez, Fernando Fernández Fernández, María Martínez
+ * 
  */
 
 public class Ejercicio1 {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-		Pattern p = Pattern.compile("[A-ZÁÉÍÓÚ]\\p{L}+(?:\\s[A-ZÁÉÍÓÚ]\\p{L}+)+");
+		Pattern p = Pattern.compile("\\p{Lu}\\p{Ll}+(?:\\s\\p{Lu}\\p{Ll}+)+");
 		System.out.print("> ");
 		String nombres = in.readLine();
 		Matcher m = p.matcher(nombres);
