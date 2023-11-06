@@ -31,12 +31,12 @@ public class Ejercicio1 {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-		Pattern p = Pattern.compile("\\p{Lu}\\p{Ll}+(?:\\s\\p{Lu}\\p{Ll}+)+");
+		Pattern p = Pattern.compile("\\p{Lu}\\p{Ll}+((?:\\s\\p{Lu}\\p{Ll}+)+)");
 		System.out.print("> ");
 		String nombres = in.readLine();
 		Matcher m = p.matcher(nombres);
 		while (m.find()) {
-			System.out.println(m.group());
+			System.out.println(m.group(1));
 		}
 	}
 
