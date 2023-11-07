@@ -18,17 +18,16 @@ public class Ejercicio3 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		String linea;
-		while (!(linea = in.readLine()).equalsIgnoreCase("fin")) {
-			for (int i=0; i<linea.length(); i++) {
-				char c = linea.charAt(i);
-				int j = linea.indexOf(c, i + 1);
-				if (j == -1) {
-					System.out.println(c);
-					break;
-				}
-			}
-		}
-		
+		System.out.print("> ");
+		while (!(linea = in.readLine()).equalsIgnoreCase("fin"))
+			System.out.print(primeroQueNoSeRepite(linea) + "\n> ");
+	}
+	
+	static char primeroQueNoSeRepite(String s) {
+		int i = 0;
+		while (i < s.length() && (i != s.indexOf(s.charAt(i)) || i != s.lastIndexOf(s.charAt(i))))
+			i++;
+		return s.charAt(i);
 	}
 
 }
