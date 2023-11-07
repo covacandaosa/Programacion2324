@@ -1,8 +1,8 @@
 package regex;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.Scanner;
+import java.util.regex.Pattern;
 
 /*
  * Escribe un programa que use una expresión regular para validar
@@ -27,16 +27,48 @@ import java.io.InputStreamReader;
 
 public class Ejercicio2 {
 
+//	public static void main(String[] args) throws IOException {
+//		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+//		String fecha;
+//		System.out.print("Fecha: ");
+//		while (!(fecha = in.readLine()).equalsIgnoreCase("fin")) {
+//			if (fecha.matches("\\d{2}([-/])(?:\\w{3}|\\d{2})\\1\\d{1,4}"))
+//				System.out.println("correcta");
+//			else
+//				System.out.println("incorrecta");
+//			System.out.print("Fecha: ");
+//		}
+//	}
+
+//	public static void main(String[] args) throws IOException {
+//		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+//		Pattern pattern = Pattern.compile("(?:0[1-9]|[12]\\d|3[01])([-/])(?:\\w{3}|(?:0[1-9]|1[0-2]))\\1\\d{1,4}");
+//		String fecha;
+//		System.out.print("Fecha: ");
+//		while (!(fecha = in.readLine()).equalsIgnoreCase("fin")) {
+//			if (pattern.matcher(fecha).matches())
+//				System.out.println("correcta");
+//			else
+//				System.out.println("incorrecta");
+//			System.out.print("Fecha: ");
+//		}
+//	}
+
 	public static void main(String[] args) throws IOException {
-		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-		String fecha;
-		System.out.print("Fecha: ");
-		while (!(fecha = in.readLine()).equalsIgnoreCase("fin")) {
-			if (fecha.matches("\\d{2}([-/])(?:\\w{3}|\\d{2})\\1\\d{4}"))
-				System.out.println("correcta");
-			else
-				System.out.println("incorrecta");
-			System.out.print("Fecha: ");
+
+		try (Scanner in = new Scanner(System.in)) {
+			String fecha;
+			do {
+				System.out.print("Fechas: ");
+				try {
+					fecha = in.next("(?:0[1-9]|[12]\\d|3[01])([-/])(?:\\w{3}|(?:0[1-9]|1[0-2]))\\1\\d{1,4}|fin");
+					if (!fecha.equalsIgnoreCase("fin"))
+						System.out.println(fecha + ": correcta");
+				} catch (Exception e) {
+					fecha = in.next();
+					System.out.println(fecha + ": incorrecta");
+				}
+			} while (!fecha.equalsIgnoreCase("fin"));
 		}
 	}
 
