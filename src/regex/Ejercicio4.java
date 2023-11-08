@@ -17,7 +17,7 @@ public class Ejercicio4 {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		System.out.println(args[0]);
-		Pattern regex = Pattern.compile("https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)");
+		Pattern regex = Pattern.compile("");
 		try (Scanner s = new Scanner(new File(args[0]))) {
 			String url;
 			while ((url = s.findWithinHorizon(regex, 0)) != null) {
