@@ -1,8 +1,8 @@
 package regex;
 
 import java.io.IOException;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
-import java.util.regex.Pattern;
 
 /*
  * Escribe un programa que use una expresión regular para validar
@@ -64,7 +64,7 @@ public class Ejercicio2 {
 					fecha = in.next("(?:0[1-9]|[12]\\d|3[01])([-/])(?:\\w{3}|(?:0[1-9]|1[0-2]))\\1\\d{1,4}|fin");
 					if (!fecha.equalsIgnoreCase("fin"))
 						System.out.println(fecha + ": correcta");
-				} catch (Exception e) {
+				} catch (NoSuchElementException e) {
 					fecha = in.next();
 					System.out.println(fecha + ": incorrecta");
 				}
