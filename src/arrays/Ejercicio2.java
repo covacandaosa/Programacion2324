@@ -72,9 +72,10 @@ public class Ejercicio2 {
 			int n = r.nextInt(201) - 100;
 			int j = 0;
 			while (j < i && v[j++] != n);
-			if (j == i)
+			if (j == i) {
 				v[i] = n;
-			i++;
+				i++;
+			}
 		}
 		System.out.println(Arrays.toString(v));
 		System.out.println(Arrays.toString(crearInverso(v)));
