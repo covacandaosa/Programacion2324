@@ -1,7 +1,6 @@
 package arrays;
 
 import java.util.Arrays;
-import java.util.Random;
 
 /*
  * Programa que realice las tareas siguientes:
@@ -57,26 +56,11 @@ public class Ejercicio2 {
 ////			return false;
 //	}
 	
-	static int [] crearInverso(int [] v) {
-		int [] vInverso = new int[v.length];
-		for (int i = v.length - 1; i >= 0; i--)
-			vInverso[v.length - 1 - i] = v[i];
-		return vInverso;
-	}
-	
+		
 	public static void main(String[] args) {
-		Random r = new Random();
-		int [] v = new int[r.nextInt(41) + 10];
-		int i=0;
-		while (i < v.length) {
-			int n = r.nextInt(201) - 100;
-			int j = 0;
-			while (j < i && v[j++] != n);
-			if (j == i)
-				v[i++] = n;
-		}
+		int [] v = Ejercicio5.rellenarSinRepetir(10, 50, -100, 100);
 		System.out.println(Arrays.toString(v));
-		System.out.println(Arrays.toString(crearInverso(v)));
+		System.out.println(Arrays.toString(Ejercicio5.crearInverso(v)));
 	}
 	
 	
