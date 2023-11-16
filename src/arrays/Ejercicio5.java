@@ -32,4 +32,30 @@ public class Ejercicio5 {
 		return vInverso;
 	}
 	
+	public static int buscarMaximo(int[] v) {
+		int maximo=v[0];
+		for (int i=1; i<v.length; i++) {
+			if (v[i]>maximo) {maximo=v[i];}
+		}
+		return maximo;
+	}
+	
+	public static double calculadorMedia (double[] v) {
+		double media = v[0];
+		for (int i=1; i<v.length; i++ )
+			media += v[i];
+		return media / v.length;
+	}
+		
+	public static int contadorAlgos (String [] v, String algos) {
+		int n = 0;
+		for (int i=0; i<v.length; i++ ) {
+			if (v[i].indexOf(algos)) {
+				n += 1;
+			}
+		}
+		return n; 
+	}
 }
+	
+
