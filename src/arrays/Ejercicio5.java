@@ -1,5 +1,7 @@
 package arrays;
 
+import java.util.Arrays;
+
 public class Ejercicio5 {
 
 	public static int [] rellenarSinRepetir(int tamMin, int tamMax, int min, int max) {
@@ -47,15 +49,65 @@ public class Ejercicio5 {
 		return media / v.length;
 	}
 		
-	public static int contadorAlgos (String [] v, String algos) {
-		int n = 0;
-		for (int i=0; i<v.length; i++ ) {
-			if (v[i].indexOf(algos)) {
-				n += 1;
+//	public static int contadorAlgos (String [] v, String algos) {
+//		int n = 0;
+//		for (int i=0; i<v.length; i++ ) {
+//			if (v[i].indexOf(algos)) {
+//				n += 1;
+//			}
+//		}
+//		return n; 
+//	}
+	
+	public static boolean comparar(String [] v1, String [] v2) {
+		boolean iguales = v1.length == v2.length;
+		if (iguales == true) {
+			int i = 0;
+			do {
+				if (!v1[i].equals(v2[i]))
+					iguales = false;
+				i++;
+			} while(i < v1.length && iguales);
+		}
+		return iguales;
+	}
+	
+	public static void intercambio(String v []) {
+		for (int i = 0; i < v.length - 1; i += 2) {
+			String aux = v[i];
+			v[i] = v[i + 1];
+			v[i + 1] = aux;
+		}
+	}
+	
+	public static int difMaxMix(int[] v) {
+		int min=v[0];
+		int max=v[0];
+		for(int i =1; i<v.length;i++) {
+			if(v[i]>max) {
+				max = v[i];
+			}
+			if(v[i]<min) {
+				min = v[i];
 			}
 		}
-		return n; 
+		return max-min+1;
 	}
+	
+	
+	public static void main(String[] args) {
+		String [] v1 = {"ab", "cd", "ef"};
+		String [] v2 = {"ab", "cd", "ef"};
+		String [] v3 = {"ab", "gh", "ef"};
+		String [] v4 = {"ab", "cd"};
+		System.out.println(comparar(v1, v2));
+		System.out.println(comparar(v1, v3));
+		System.out.println(comparar(v2, v4));
+		System.out.println(Arrays.toString(v1));
+		intercambio(v1);
+		System.out.println(Arrays.toString(v1));
+	}
+	
 }
 	
 
