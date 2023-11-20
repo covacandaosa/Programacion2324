@@ -81,9 +81,20 @@ public class Ejercicio5 {
 	}
 	
 	public static int difMaxMix(int[] v) {
-		int min=v[0];
-		int max=v[0];
-		for(int i =1; i<v.length;i++) {
+//		int min=v[0];
+//		int max=v[0];
+//		for(int i =1; i<v.length;i++) {
+//			if(v[i]>max) {
+//				max = v[i];
+//			}
+//			if(v[i]<min) {
+//				min = v[i];
+//			}
+//		}
+//		return max-min+1;
+		int min=Integer.MAX_VALUE;
+		int max=Integer.MIN_VALUE;
+		for(int i = 0; i<v.length;i++) {
 			if(v[i]>max) {
 				max = v[i];
 			}
