@@ -18,7 +18,7 @@ import java.util.Arrays;
  *     
  */
 
-public class Ejercicio2 {
+public class Ejercicio02 {
 
 //	public static void main(String[] args) {
 //		Random r = new Random();
@@ -58,9 +58,9 @@ public class Ejercicio2 {
 	
 		
 	public static void main(String[] args) {
-		int [] v = Ejercicio5.rellenarSinRepetir(10, 50, -100, 100);
+		int [] v = Ejercicio05.rellenarSinRepetir(10, 50, -100, 100);
 		System.out.println(Arrays.toString(v));
-		System.out.println(Arrays.toString(Ejercicio5.crearInverso(v)));
+		System.out.println(Arrays.toString(Ejercicio05.crearInverso(v)));
 	}
 	
 	

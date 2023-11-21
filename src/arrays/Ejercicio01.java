@@ -8,7 +8,7 @@ import java.util.Scanner;
  * Antes de finalizar mostrará el número de veces que salió cada una de las caras.
  */
 
-public class Ejercicio1 {
+public class Ejercicio01 {
 
 	public static void main(String[] args) {
 		try (Scanner in = new Scanner(System.in)) {
