@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Ejercicio05 {
 
 	public static int [] rellenarSinRepetir(int tamMin, int tamMax, int min, int max) {
-		int [] v = new int[(int) Math.round(Math.random() * (Math.abs(tamMax - tamMin) + 1) - min)];
+		int [] v = new int[(int) Math.round(Math.random() * (Math.abs(tamMax - tamMin) + 1) + tamMin)];
 		rellenarSinRepetir(v, min, max);
 		return v;
 	}

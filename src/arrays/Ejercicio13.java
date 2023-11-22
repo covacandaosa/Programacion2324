@@ -2,7 +2,7 @@ package arrays;
 
 import java.util.Arrays;
 
-public class Ordenación {
+public class Ejercicio13 {
 
 	public static void main(String[] args) {
 		int [] v = {10, 3, 9, 5, 7};
