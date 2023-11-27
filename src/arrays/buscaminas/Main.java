@@ -34,6 +34,11 @@ public class Main {
 			for (int j=0; j<tablero[i].length; j++) {
 				if (tablero[i][j] != -1) {
 					int cont = 0;
+					for (int k=i-1; k<=i+1; k++)
+						for (int l=j-1; l<=j+1; l++)
+							if (k >= 0 && k < tablero.length && l >= 0 && l < tablero[i].length && tablero[k][l] == -1)
+								cont++;
+					tablero[i][j] = cont;
 				}
 			}
 		
