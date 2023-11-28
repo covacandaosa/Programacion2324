@@ -19,23 +19,50 @@ public class Ejercicio1 {
 		try (Scanner in = new Scanner(System.in)) {
 			int [] v = new int[10];
 			for (int i=0; i<v.length; i++)
-				v[i] = pedirNumero(in);
+				v[i] = pedirNumero(in, "Introduce un número: ");
 		}
 	}
 	
-	static int pedirNumero(Scanner in) {
-		int n = 0;
-		boolean correcto = false;
-		while (!correcto) {
-			System.out.print("Introduce un número: ");
+//	static int pedirNumero(Scanner in, String mensaje) {
+//		int n = 0;
+//		boolean correcto = false;
+//		while (!correcto) {
+//			System.out.print(mensaje);
+//			try {
+//				n = in.nextInt();
+//				correcto = true;
+//			} catch (InputMismatchException e) {
+//				System.out.println("Error, \"" + in.next() + "\" no es un número.");
+//			}
+//		}
+//		return n;
+//	}
+	
+//	static int pedirNumero(Scanner in, String mensaje) {
+//		int n = 0;
+//		boolean correcto = false;
+//		while (!correcto) {
+//			System.out.print(mensaje);
+//			try {
+//				n = in.nextInt();
+//				correcto = true;
+//			} catch (InputMismatchException e) {
+//				System.out.println("Error, \"" + in.next() + "\" no es un número.");
+//			}
+//		}
+//		return n;
+//	}
+	
+	static int pedirNumero(Scanner in, String mensaje) {
+//		while (true) {
+		for (;;) {
+			System.out.print(mensaje);
 			try {
-				n = in.nextInt();
-				correcto = true;
+				return in.nextInt();
 			} catch (InputMismatchException e) {
 				System.out.println("Error, \"" + in.next() + "\" no es un número.");
 			}
 		}
-		return n;
 	}
 
 }
