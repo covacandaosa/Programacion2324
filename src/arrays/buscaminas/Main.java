@@ -19,6 +19,50 @@ public class Main {
 	 * 
 	 * Crea el tablero y coloca el número de minas especificado de forma aleatoria
 	 */
+//	static int [][] crearTablero(int filas, int columnas, int fil, int col) {
+//		int [][] tablero = new int[filas][columnas];
+//		int numMinas = (int) (0.15 * (filas * columnas));
+//		while (numMinas > 0) {
+//			int i = r.nextInt(filas);
+//			int j = r.nextInt(columnas);
+//			if (tablero [i][j] != -1 && (i != fil || j != col)) {
+//				tablero [i][j] = -1;
+//				numMinas--;
+//			}
+//		}
+//		for (int i=0; i<tablero.length; i++)
+//			for (int j=0; j<tablero[i].length; j++) {
+//				if (tablero[i][j] != -1) {
+//					int cont = 0;
+//					for (int k=i-1; k<=i+1; k++)
+//						for (int l=j-1; l<=j+1; l++)
+//							if (k >= 0 && k < tablero.length && l >= 0 && l < tablero[i].length && tablero[k][l] == -1)
+//								cont++;
+//					tablero[i][j] = cont;
+//				}
+//			}
+//		
+//		return tablero;
+//	}
+	
+//	static int [][] crearTablero(int filas, int columnas, int fil, int col) {
+//		int [][] tablero = new int[filas][columnas];
+//		int numMinas = (int) (0.15 * (filas * columnas));
+//		while (numMinas > 0) {
+//			int i = r.nextInt(filas);
+//			int j = r.nextInt(columnas);
+//			if (tablero [i][j] != -1 && (i != fil || j != col)) {
+//				tablero [i][j] = -1;
+//				numMinas--;
+//				for (int k=i-1; k<=i+1; k++)
+//					for (int l=j-1; l<=j+1; l++)
+//						if (k >= 0 && k < tablero.length && l >= 0 && l < tablero[i].length && tablero[k][l] != -1)
+//							tablero[k][l]++;	
+//			}
+//		}
+//		return tablero;
+//	}
+	
 	static int [][] crearTablero(int filas, int columnas, int fil, int col) {
 		int [][] tablero = new int[filas][columnas];
 		int numMinas = (int) (0.15 * (filas * columnas));
@@ -28,22 +72,17 @@ public class Main {
 			if (tablero [i][j] != -1 && (i != fil || j != col)) {
 				tablero [i][j] = -1;
 				numMinas--;
+				for (int k=i-1; k<=i+1; k++)
+					for (int l=j-1; l<=j+1; l++)
+						try {
+							if (tablero[k][l] != -1)
+								tablero[k][l]++;
+						} catch (ArrayIndexOutOfBoundsException e) {}
 			}
 		}
-		for (int i=0; i<tablero.length; i++)
-			for (int j=0; j<tablero[i].length; j++) {
-				if (tablero[i][j] != -1) {
-					int cont = 0;
-					for (int k=i-1; k<=i+1; k++)
-						for (int l=j-1; l<=j+1; l++)
-							if (k >= 0 && k < tablero.length && l >= 0 && l < tablero[i].length && tablero[k][l] == -1)
-								cont++;
-					tablero[i][j] = cont;
-				}
-			}
-		
 		return tablero;
 	}
+	
 	
 	static void mostrarTablero(int [][] tablero) {
 		for (int i=0; i<tablero.length; i++) {
