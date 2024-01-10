@@ -1,6 +1,7 @@
 package clases.ejercicio1;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Animal {
 
@@ -40,5 +41,24 @@ public class Animal {
 	public String toString() {
 		return super.toString() + " Animal [nombre=" + nombre + ", fecha=" + fecha + "]";
 	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(fecha, nombre);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Animal other = (Animal) obj;
+		return Objects.equals(fecha, other.fecha) && Objects.equals(nombre, other.nombre);
+	}
+	
+	
 	
 }
