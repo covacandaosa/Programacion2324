@@ -15,12 +15,6 @@ public class Animal {
 		this.fecha = fecha;
 	}
 	
-	public Animal(LocalDate fecha) {
-		this("Michi", fecha);
-//		nombre = "Michi";
-//		this.fecha = fecha;
-	}
-	
 	public String getNombre() {
 		return nombre;
 	}
