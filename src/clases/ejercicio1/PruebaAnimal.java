@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public class PruebaAnimal {
 
 	public static void main(String[] args) {
-		Animal animal1 = new Animal(LocalDate.now());
+		Animal animal1 = new Animal("Pepe", LocalDate.now());
 		System.out.println(animal1);
 	}
 	

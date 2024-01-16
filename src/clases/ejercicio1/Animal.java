@@ -7,8 +7,8 @@ public class Animal {
 
 	public static int numeroDeAnimales;
 	
-	private String nombre;
-	private LocalDate fecha;
+	protected String nombre;
+	protected LocalDate fecha;
 	
 	public Animal(String nombre, LocalDate fecha) {
 		this.nombre = nombre;
@@ -53,6 +53,9 @@ public class Animal {
 		return Objects.equals(fecha, other.fecha) && Objects.equals(nombre, other.nombre);
 	}
 	
+	public void queSoy() {
+		System.out.println("Un animal");
+	}
 	
 	
 }
