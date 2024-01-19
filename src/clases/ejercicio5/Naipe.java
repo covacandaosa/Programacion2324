@@ -23,10 +23,4 @@ public class Naipe {
 		return rango.toString() + palo.toString() + "(" + valor + ")";
 	}
 	
-	public static void main(String[] args) {
-		Naipe n = new Naipe(Palo.CORAZONES, Rango.QUEEN);
-		System.out.println(n);
-	}
-	
-	
 }
