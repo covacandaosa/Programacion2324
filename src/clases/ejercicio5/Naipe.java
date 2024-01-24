@@ -22,5 +22,19 @@ public class Naipe {
 	public String toString() {
 		return rango.toString() + palo.toString() + "(" + valor + ")";
 	}
+
+	public Palo getPalo() {
+		return palo;
+	}
+
+	public Rango getRango() {
+		return rango;
+	}
+
+	public int getValor() {
+		return valor;
+	}
+	
+	
 	
 }

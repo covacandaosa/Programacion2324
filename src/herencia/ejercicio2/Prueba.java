@@ -1,4 +1,8 @@
-package herencia.ejercicio1;
+package herencia.ejercicio2;
+
+import herencia.ejercicio1.DVD;
+import herencia.ejercicio1.Libro;
+import herencia.ejercicio1.Prestable;
 
 public class Prueba {
 
