@@ -20,7 +20,7 @@ public class ManoBJ2 extends Mazo2 {
 		if (naipe.getRango() == Rango.ACE)
 			ases++;
 		while (valor > 21 && ases > 0) {
-			valor -= 9;
+			valor -= 10;
 			ases--;
 		}
 	}

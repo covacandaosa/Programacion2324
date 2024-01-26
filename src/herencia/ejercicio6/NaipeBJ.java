@@ -9,7 +9,7 @@ import static clases.ejercicio5.Rango.*;
 public class NaipeBJ extends Naipe {
 
 	public NaipeBJ(Palo palo, Rango rango) {
-		super(palo, rango, rango == ACE || rango == QUEEN ||
+		super(palo, rango, rango == ACE ? 11 : rango == QUEEN ||
 				rango == JACK || rango == KING ? 10 : rango.ordinal() + 1);
 	}
 
@@ -17,7 +17,7 @@ public class NaipeBJ extends Naipe {
 		if (getRango() == ACE && corregir)
 			return 1;
 		else
-			return getValor();
+			return super.getValor();
 	}
 	
     @Override

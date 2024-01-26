@@ -9,6 +9,7 @@ import java.util.Random;
 import clases.ejercicio5.Naipe;
 import clases.ejercicio5.Palo;
 import clases.ejercicio5.Rango;
+import herencia.ejercicio6.MazoBJ;
 
 public class Mazo {
 
@@ -53,6 +54,10 @@ public class Mazo {
 	
 	public List<Naipe> getNaipes() {
 		return Collections.unmodifiableList(naipes);
+	}
+	
+	public int size() {
+		return naipes.size();
 	}
 	
 	@Override
