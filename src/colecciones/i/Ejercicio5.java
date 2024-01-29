@@ -1,10 +1,27 @@
 package colecciones.i;
 
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
 public class Ejercicio5 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		try (Scanner in = new Scanner(System.in)) { 
+			Queue<Integer> cola = new LinkedList<>();
+			System.out.print("> ");
+			int n = in.nextInt();
+			int k = in.nextInt();
+			int x = in.nextInt();
+			System.out.print("> ");
+			for (int i=0; i<n; i++)
+				cola.offer(in.nextInt());
+			for (int i=0; i<k; i--)
+				cola.poll();
+			
+				
+			}
+		}
 	}
 
 }
