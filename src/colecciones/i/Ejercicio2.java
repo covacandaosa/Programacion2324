@@ -1,10 +1,13 @@
 package colecciones.i;
 
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Ejercicio2 {
 
@@ -12,8 +15,10 @@ public class Ejercicio2 {
 		Random r = new Random();
 		List<Integer> lista = new LinkedList<>();
 		for (int i=0; i<100; i++)
-			lista.add(r.nextInt(100) + 1);
+			lista.add(r.nextInt(2000) + 1);
 		mostrar(lista, 1);
+		mostrar(new HashSet<>(lista), 2);
+		mostrar(new TreeSet<>(lista), 3);
 	}
 	
 	static void mostrar(Collection<Integer> c, int metodo) {
@@ -31,6 +36,7 @@ public class Ejercicio2 {
 			c.forEach(n -> System.out.print(n + " "));
 			break;
 		}
+		System.out.println();
 	}
 
 }
