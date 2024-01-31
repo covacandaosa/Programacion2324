@@ -24,7 +24,7 @@ public class Ejercicio5 {
 				int v = cola.poll();
 				if (v < min)
 					min = v;
-				xEstaAlmacenado = (v == x);
+				xEstaAlmacenado = xEstaAlmacenado || (v == x);
 				cola.offer(v);
 			}
 			System.out.println(xEstaAlmacenado ? true : min);
