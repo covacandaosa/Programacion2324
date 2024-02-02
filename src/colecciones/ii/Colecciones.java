@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 
 
@@ -102,14 +103,23 @@ public class Colecciones {
 //		}
 //		return false;
 		
+//		for (String s: list) {
+//			Integer contador = mapa.putIfAbsent(s, 1);
+//			if (contador != null) {
+//				if (contador == 2)
+//					return true;
+//				else
+//					mapa.replace(s, contador + 1);
+//			}
+//		}
+//		return false;
+		
 		for (String s: list) {
-			Integer contador = mapa.putIfAbsent(s, 1);
-			if (contador != null) {
-				if (contador == 2)
+			Optional<Integer> contador = Optional.of(mapa.putIfAbsent(s, 0));
+			if (!contador.isEmpty() && contador.equals(2))
 					return true;
-				else
-					mapa.replace(s, contador + 1);
-			}
+			else
+				mapa.replace(s, contador.orElse(0) + 1);
 		}
 		return false;
 	}
