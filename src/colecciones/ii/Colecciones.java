@@ -1,11 +1,14 @@
 package colecciones.ii;
 
 import java.util.Collection;
+import java.util.Deque;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Queue;
 import java.util.Set;
 
 
@@ -122,6 +125,26 @@ public class Colecciones {
 				mapa.replace(s, contador.orElse(0) + 1);
 		}
 		return false;
+	}
+	
+	/*
+	 * EJERCICIO 5
+	 * -----------
+	 * Método llamado negativosAbajoPositivosArriba que acepte una pila de
+	 * números enteros como parámetro y la reorganice para que se queden
+	 * debajo los negativos y encima los positivos. Usa una cola como
+	 * estructura de datos auxiliar para realizar el proceso.
+	 * 
+	 * Ejemplo:
+	 * 		Entrada: [23, -5, 37, 29, -19, -55, 89] <- Tope de la pila
+	 * 		Salida:  [-55, -19, -5, 23, 89, 29, 37] <- Tope de la pila
+	 * 
+	 */
+	
+	public static void negativosAbajoPositivosArriba(Deque<Integer> pila) {
+		Queue<Integer> cola = new LinkedList<>();
+		while (!pila.isEmpty())
+			cola.offer(pila.pop());
 	}
 	
 }
