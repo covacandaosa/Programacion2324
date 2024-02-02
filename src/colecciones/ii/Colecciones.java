@@ -1,8 +1,9 @@
 package colecciones.ii;
 
 import java.util.Collection;
-import java.util.HashSet;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -57,6 +58,60 @@ public class Colecciones {
 //		return valores.size() == new HashSet<>(valores).size();
 		return valores.size() == valores.stream().distinct().count();
 		
+	}
+	
+	/*
+	 * EJERCICIO 4
+	 * -----------
+	 * Método llamado algunaSeRepiteAlMenos3Veces que acepte una lista de
+	 * cadenas como parámetro y retorne verdadero si alguna cadena se repite
+	 * al menos 3 veces en la lista o falso en caso contrario.
+	 * Resolver el problema utilizando un mapa como almacenamiento auxiliar
+	 * 
+	 */
+	
+	public static boolean algunaSeRepiteAlMenos3Veces(List<String> list) {
+		Map<String, Integer> mapa = new HashMap<>();
+//		for (String s: list) {
+//			if (mapa.containsKey(s)) {
+//				int contador = mapa.get(s);
+//				contador++;
+//				mapa.put(s, contador);
+//			}
+//			else {
+//				mapa.put(s, 1);
+//			}
+//			for (int contador: mapa.values()) {
+//				if (contador >= 3)
+//					return true;
+//			}
+//		}
+//		return false;
+		
+//		for (String s: list) {
+//			if (mapa.containsKey(s)) {
+//				int contador = mapa.get(s);
+//				contador++;
+//				if (contador >= 3)
+//					return true;
+//				mapa.put(s, contador);
+//			}
+//			else {
+//				mapa.put(s, 1);
+//			}
+//		}
+//		return false;
+		
+		for (String s: list) {
+			Integer contador = mapa.putIfAbsent(s, 1);
+			if (contador != null) {
+				if (contador == 2)
+					return true;
+				else
+					mapa.replace(s, contador + 1);
+			}
+		}
+		return false;
 	}
 	
 }
