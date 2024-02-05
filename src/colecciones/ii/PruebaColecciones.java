@@ -20,6 +20,7 @@ public class PruebaColecciones {
 				null,
 				null,
 				PruebaColecciones::pruebaEjercicio5,
+				PruebaColecciones::pruebaEjercicio6
 		};
 		System.out.print("Ejercicio (0 para salir): ");
 		while ((ejercicio = Integer.parseInt(in.readLine())) != 0) {
@@ -49,6 +50,10 @@ public class PruebaColecciones {
 		System.out.println(pila);
 		Colecciones.negativosAbajoPositivosArriba(pila);
 		System.out.println(pila);
+	}
+	
+	static void pruebaEjercicio6() {
+		System.out.println(Colecciones.moda(List.of(1, 2, 3, 2, 1, 2, 5)));
 	}
 	
 }

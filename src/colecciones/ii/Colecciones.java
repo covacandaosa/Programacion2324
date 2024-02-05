@@ -174,13 +174,14 @@ public class Colecciones {
 			else
 				mapa.replace(n, contador + 1);
 		}
-		int n = 0, max = Integer.MIN_VALUE;
-		for (Entry<Integer, Integer> e: mapa.entrySet()) {
-			if (e.getValue() > max) {
-				n = e.getKey();
-				max = e.getValue();
-			}
-		}
-		return n;
+//		int n = 0, max = Integer.MIN_VALUE;
+//		for (Entry<Integer, Integer> e: mapa.entrySet()) {
+//			if (e.getValue() > max) {
+//				n = e.getKey();
+//				max = e.getValue();
+//			}
+//		}
+//		return n;
+		return mapa.entrySet().stream().max((e1, e2) -> e1.getValue() - e2.getValue()).get().getKey();
 	}
 }
