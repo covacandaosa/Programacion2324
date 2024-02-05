@@ -186,4 +186,23 @@ public class Colecciones {
 //		return n;
 		return mapa.entrySet().stream().max((e1, e2) -> e1.getValue() - e2.getValue()).get().getKey();
 	}
+	
+	/*
+	 * Método llamado eliminarSiMayoresEncima que acepte una pila de números enteros
+	 * como parámetro y elimine de ella los elementos que tienen por encima alguno
+	 * cuyo valor sea mayor.
+	 * 
+	 * Por ejemplo, suponiendo que una pila almacena los siguientes números:
+	 * 	
+	 *          [6, 22, 17, 17, 10, 7, 9, 14, 5, 12, 7, 2] <- Tope
+	 *          
+	 * Los números 5, 9, 7, 10 y 6 deben eliminarse porque todos ellos tienen algún
+	 * número mayor por encima.
+	 * 
+	 * Sólo se permite el uso de otras pilas o colas para solucionar este problema.
+	 */
+	
+	static void eliminarSiMayoresEncima(Deque<Integer> pila) {
+		
+	}
 }
