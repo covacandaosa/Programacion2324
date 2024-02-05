@@ -3,7 +3,10 @@ package colecciones.ii;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class PruebaColecciones {
@@ -13,7 +16,10 @@ public class PruebaColecciones {
 		int ejercicio;
 		Runnable [] ejercicios = {
 				PruebaColecciones::pruebaEjercicio1,
-				PruebaColecciones::pruebaEjercicio2
+				PruebaColecciones::pruebaEjercicio2,
+				null,
+				null,
+				PruebaColecciones::pruebaEjercicio5,
 		};
 		System.out.print("Ejercicio (0 para salir): ");
 		while ((ejercicio = Integer.parseInt(in.readLine())) != 0) {
@@ -35,4 +41,14 @@ public class PruebaColecciones {
 		System.out.println(Colecciones.contieneImpares(Set.of(1, 2, 3, 4)));
 		System.out.println(Colecciones.contieneImpares(Set.of(2, 4, 6, 8)));
 	}
+	
+	static void pruebaEjercicio5() {
+		Deque<Integer> pila = new ArrayDeque<>();
+		for (int n: List.of(23, -5, 37, 29, -19, -55, 89))
+			pila.push(n);
+		System.out.println(pila);
+		Colecciones.negativosAbajoPositivosArriba(pila);
+		System.out.println(pila);
+	}
+	
 }

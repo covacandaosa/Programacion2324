@@ -7,6 +7,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Optional;
 import java.util.Queue;
 import java.util.Set;
@@ -145,6 +146,41 @@ public class Colecciones {
 		Queue<Integer> cola = new LinkedList<>();
 		while (!pila.isEmpty())
 			cola.offer(pila.pop());
+		int n = cola.size();
+		for (int i=0; i<n; i++) {
+			int v = cola.poll();
+			if (v < 0)
+				pila.push(v);
+			else
+				cola.offer(v);
+		}
+		while (!cola.isEmpty())
+			pila.push(cola.poll());
 	}
 	
+	/*
+	 * Método llamado moda que acepte una lista de números enteros
+	 * como parámetro y retorne el número que se repite con mayor
+	 * frecuencia (la moda) o lanzar una exceción si la lista está
+	 * vacía.
+	 * 
+	 */
+	static int moda(List<Integer> lista) {
+		Map<Integer, Integer> mapa = new HashMap<>();
+		for(int n: lista) {
+			Integer contador = mapa.get(n);
+			if (contador == null)
+				mapa.put(n, 1);
+			else
+				mapa.replace(n, contador + 1);
+		}
+		int n = 0, max = Integer.MIN_VALUE;
+		for (Entry<Integer, Integer> e: mapa.entrySet()) {
+			if (e.getValue() > max) {
+				n = e.getKey();
+				max = e.getValue();
+			}
+		}
+		return n;
+	}
 }
