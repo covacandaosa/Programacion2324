@@ -166,6 +166,8 @@ public class Colecciones {
 	 * 
 	 */
 	static int moda(List<Integer> lista) {
+		if (lista == null || lista.isEmpty())
+			throw new IllegalArgumentException();
 		Map<Integer, Integer> mapa = new HashMap<>();
 		for(int n: lista) {
 			Integer contador = mapa.get(n);
