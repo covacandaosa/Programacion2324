@@ -2,6 +2,7 @@ package funcional;
 
 import java.util.List;
 import java.util.function.BiConsumer;
+import java.util.function.BiFunction;
 import java.util.stream.Collectors;
 
 public class Actividad1 {
@@ -31,6 +32,19 @@ public class Actividad1 {
 				.stream().filter(v -> v > n)
 				.collect(Collectors.averagingDouble(v -> v)));
 		biConsumer.accept(List.of(1, 2, 3, 4, 5, 6, 7), 3d);
+		
+//		BiFunction<Boolean, Float, Double> biFunction;
+//		biFunction = (a, b) -> a ? Math.sqrt(b) : Math.sin(b);
+		
+		BiFunction<Boolean, Float, Double> biFunction = new BiFunction<>() {
+			@Override
+			public Double apply(Boolean a, Float b) {
+				return a ? Math.sqrt(b) : Math.sin(b);
+			}
+		};
+		
+		System.out.println(biFunction.apply(true, 100f));
+		System.out.println(biFunction.apply(false, 100f));
 		
 	}
 
