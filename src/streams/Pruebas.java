@@ -17,8 +17,15 @@ public class Pruebas {
 		/* 
 		 * Crea una lista con las longitudes de las palabras de longitud par
 		 */
-		
-		
+		List<Integer> longitudes = l
+				.stream().filter(Pruebas::esDeLongitudPar)	// s -> s.length() % 2 == 0
+				.map(String::length)				//s -> s.length()
+				.distinct()
+				.toList();	
 	}
 
+	static boolean esDeLongitudPar(String s) {
+		return s.length() / 2 == 0;
+	}
+	
 }
