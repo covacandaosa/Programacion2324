@@ -3,7 +3,7 @@ package streams;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class Actividad1 {
+public class Actividad4 {
 
 	public static void main(String[] args) {
 		List<Integer> l = List.of(1, 5, 3, 9, 7);
